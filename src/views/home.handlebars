@@ -1,0 +1,41 @@
+{{>navbar}}
+<main class="mainProducts">
+  <article id="products">
+<input type="text" value="{{user.cart}}" id="cart" hidden>
+    {{#each products}}
+      <div class="card cardEcommerce" style="width: 370px;height: 600px">
+        <img
+          src=""
+          class="card-img-top style="
+          height="300rem"
+          alt={{description}}
+        />
+        <div class="card-body">
+          <p class="card-title fw-bold fs-5">{{title}}</p>
+          <p class="card-text"><small class="text-body-secondary">
+              {{description}}
+            </small></p>
+          <p class="card-text precio fw-bold">${{price}}</p>
+          <button id=`btnAdd-{{code}}` class="btn btn-success" onclick="addToCart('{{_id}}')">Add</button>
+        </div>
+      </div>
+    {{/each}}
+    
+  </article>
+<div class="pagination d-flex justify-content-center align-items-center">
+    {{#if hasPrevPage}}
+        <a href="{{prevLink}}"><button class="btn btn-primary">Prev</button></a>
+    {{else}}
+        <button disabled class="btn btn-secondary">Prev</button>
+    {{/if}}
+    <p class="mx-3 mb-0">Page: <strong>{{page}}</strong> of <strong>{{totalPages}}</strong></p>
+    {{#if hasNextPage}}
+        <a href="{{nextLink}}"><button class="btn btn-primary">Next</button></a>
+    {{else}}
+        <button disabled class="btn btn-secondary">Next</button>
+    {{/if}}
+</div>
+
+</main>
+<script  type="text/javascript"src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script src="/js/cart.js"></script>

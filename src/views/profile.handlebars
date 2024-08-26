@@ -1,0 +1,82 @@
+{{> navbar}}
+<div class="container mt-5">
+  <div class="profile-container col-md-6 offset-md-3">
+    <h2 class="profile-title text-center">Profile</h2>
+    <div class="profile-info mb-3">
+      <label for="first_name">First Name:</label>
+      <p>{{user.first_name}}</p>
+    </div>
+    <div class="profile-info mb-3">
+      <label for="last_name">Last Name:</label>
+      <p>{{user.last_name}}</p>
+    </div>
+    <div class="profile-info mb-3">
+      <label for="email">Email:</label>
+      <p>{{user.email}}</p>
+    </div>
+    <div class="profile-info mb-3">
+      <label for="age">Age:</label>
+      <p>{{user.age}}</p>
+    </div>
+    <div class="profile-action text-center mb-3">
+      <form action="/api/sessions/logout" method="post">
+        <input type="text" name="web" value="web" hidden />
+        <button type="submit" class="btn btn-danger">Logout</button>
+      </form>
+    </div>
+    <div class="profile-action text-center mb-3">
+      <a href="/request-password-reset" class="btn btn-warning">Change Password</a>
+    </div>
+    <div class="profile-action text-center mb-3">
+      <a href="/documents/{{userId}}" class="btn btn-primary">Upload Documents</a>
+    </div>
+  </div>
+
+ {{#if isAdmin}}
+    <h3>User Management</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Change Role</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each userList}}
+        <tr>
+          <td>{{_id}}</td>
+          <td>{{first_name}}</td>
+          <td>{{email}}</td>
+          <td>{{role}}</td>
+          <td>
+            <form action="api/users/admin/{{_id}}/role" method="POST" id="roleForm">
+              <input id="userID" type="text" name="userId" value={{_id}} hidden>
+              <select id="roleSelect" name="role">
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+                <option value="premium">Premium</option>
+              </select>
+              <button type="submit" class="btn btn-link" onclick="handleEvent(event)">
+                <i class="fas fa-sync-alt"></i>
+              </button>
+            </form>
+          </td>
+          <td>
+            <form action="api/users/admin/{{_id}}/delete" method="POST" id="deleteForm">
+              <input id="userID" type="text" name="userId" value={{_id}} hidden>
+                <button type="submit" class="btn btn-danger" onclick="handleDelete(event)">
+                  Delete
+                </button>
+              </form>
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  {{/if}}
+</div>
+<script src="/js/profileAdmin.js"></script>

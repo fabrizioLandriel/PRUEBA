@@ -1,0 +1,114 @@
+[
+     {
+          "id": 1,
+          "title": "teclado",
+          "description": "tecladogamer",
+          "code": "tec1",
+          "price": "$10",
+          "status": true,
+          "stock": 10,
+          "category": "teclados",
+          "thumbnails": [
+               "img",
+               "img2"
+          ]
+     },
+     {
+          "id": 2,
+          "title": "mouse",
+          "description": "mousegamer",
+          "code": "mou1",
+          "price": "$10",
+          "status": true,
+          "stock": 10,
+          "category": "mouses",
+          "thumbnails": [
+               "img",
+               "img2"
+          ]
+     },
+     {
+          "id": 3,
+          "title": "auricular",
+          "description": "auriculargamer",
+          "code": "aur1",
+          "price": "$10",
+          "status": true,
+          "stock": 10,
+          "category": "auriculares",
+          "thumbnails": [
+               "img",
+               "img2"
+          ]
+     },
+     {
+          "id": 4,
+          "title": "monitor",
+          "description": "monitorgamer",
+          "code": "mon1",
+          "price": "$10",
+          "status": true,
+          "stock": 10,
+          "category": "monitores",
+          "thumbnails": [
+               "img",
+               "img2"
+          ]
+     },
+     {
+          "id": 5,
+          "title": "escritorio",
+          "description": "escritoriogamer",
+          "code": "esc1",
+          "price": "$10",
+          "status": false,
+          "stock": 10,
+          "category": "escritorios",
+          "thumbnails": [
+               "img",
+               "img2"
+          ]
+     },
+     {
+          "id": 6,
+          "title": "Mousepad",
+          "description": "Mousepad redragon",
+          "code": "pad1",
+          "price": "$5",
+          "status": true,
+          "stock": 15,
+          "category": "mousepads",
+          "thumbnails": [
+               "img1",
+               "img2"
+          ]
+     },
+     {
+          "id": 7,
+          "title": "notebook",
+          "description": "notebook hp pavilion",
+          "code": "nbook1",
+          "price": "$35",
+          "status": true,
+          "stock": 50,
+          "category": "notebooks",
+          "thumbnails": [
+               "img1",
+               "img2"
+          ]
+     },
+     {
+          "id": 8,
+          "title": "motherboard ",
+          "description": "motherboard asus",
+          "code": "mb1",
+          "price": "$29",
+          "status": true,
+          "stock": 2,
+          "category": "motherboards",
+          "thumbnails": [
+               "img1",
+               "img2"
+          ]
+     }
+]

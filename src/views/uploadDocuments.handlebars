@@ -1,0 +1,70 @@
+{{>navbar}}
+<div class="container mt-5">
+  <h2 class="mb-4">Upload documents</h2>
+
+  <form
+    action="/api/users/{{userId}}/documents"
+    method="POST"
+    enctype="multipart/form-data"
+    class="upload-form"
+  >
+    <div class="form-group">
+      <label for="profile">Upload profile image</label>
+      <input
+        type="file"
+        name="profile"
+        class="form-control-file"
+        id="profile"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Send</button>
+  </form>
+
+  <hr />
+
+  <form
+    action="/api/users/{{userId}}/documents"
+    method="POST"
+    enctype="multipart/form-data"
+    class="upload-form"
+  >
+    <div class="form-group">
+      <label for="product">Upload product image</label>
+      <input
+        type="file"
+        name="product"
+        class="form-control-file"
+        id="product"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Send</button>
+  </form>
+
+  <hr />
+  <form
+    action="/api/users/{{userId}}/documents"
+    method="POST"
+    enctype="multipart/form-data"
+    class="upload-form"
+  >
+    <div class="form-group">
+      <label for="documentType">Type of document</label>
+      <select id="documentType" name="documentType">
+        <option value="identification">Identification</option>
+        <option value="address">Adress</option>
+        <option value="statement">Statement</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="document">Upload document</label>
+      <input
+        type="file"
+        name="document"
+        class="form-control-file"
+        id="document"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Send</button>
+  </form>
+</div>
+<script src="/js/docs.js"></script>
