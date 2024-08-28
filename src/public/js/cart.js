@@ -8,20 +8,20 @@ const addToCart = async (pid) => {
 
     if (response.status === 200) {
       Toastify({
-        text: `Product ${pid} added to cart`,
+        text: `Producto ${pid} agregado al carrito`,
         style: {
-          background: "linear-gradient(to right, #00b09b, #96c93d)",
+          background: "linear-gradient(to right, #FFA100, #0066A1)",
         },
         duration: 3000,
       }).showToast();
     } else {
-      throw new Error("Failed to add product to cart");
+      throw new Error("Fallo en agregar producto al carrito");
     }
   } catch (error) {
     Toastify({
-      text: "Failed to add product to cart",
+      text: "Fallo en agregar producto al carrito",
       style: {
-        background: "linear-gradient(to right, #ff4b2b, #ff416c)",
+        background: "linear-gradient(to right, #FFA100, #0066A1)",
       },
       duration: 3000,
     }).showToast();
@@ -38,9 +38,9 @@ const removeFromCart = async (pid) => {
 
     if (response.status === 200) {
       Toastify({
-        text: `Product ${pid} removed from cart`,
+        text: `Producto ${pid} eliminado del carrito`,
         style: {
-          background: "linear-gradient(to right, #ff4b2b, #ff416c)",
+          background: "linear-gradient(to right, #FFA100, #0066A1)",
         },
         duration: 3000,
       }).showToast();
@@ -49,13 +49,13 @@ const removeFromCart = async (pid) => {
         window.location.reload();
       }, 1500);
     } else {
-      throw new Error("Failed to add product to cart");
+      throw new Error("Fallo en agregar producto al carrito");
     }
   } catch (error) {
     Toastify({
-      text: "Failed to add product to cart",
+      text: "Fallo en agregar producto al carrito",
       style: {
-        background: "linear-gradient(to right, #ff4b2b, #ff416c)",
+        background: "linear-gradient(to right, #FFA100, #0066A1)",
       },
       duration: 3000,
     }).showToast();
@@ -72,7 +72,7 @@ const purchase = async (cid) => {
     if (response.status === 200) {
       if (data.ticket) {
         Swal.fire({
-          title: "Purchase successful",
+          title: "Compra satisfactoria",
           icon: "success",
         });
         setTimeout(() => {
@@ -80,18 +80,18 @@ const purchase = async (cid) => {
         }, 1500);
       } else {
         Swal.fire({
-          title: "Insufficient stock for some products",
+          title: "Stock faltante en algunos productos",
           icon: "error",
         });
       }
     } else {
-      throw new Error("Failed to complete purchase");
+      throw new Error("Fallo en completar la compra");
     }
   } catch (error) {
     Toastify({
-      text: "Failed to complete purchase",
+      text: "Fallo en completar la compra",
       style: {
-        background: "linear-gradient(to right, #ff4b2b, #ff416c)",
+        background: "linear-gradient(to right, #FFA100, #0066A1)",
       },
       duration: 3000,
     }).showToast();

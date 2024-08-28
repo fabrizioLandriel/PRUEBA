@@ -8,6 +8,9 @@ const transporter = nodemailer.createTransport({
     user: config.USER_GMAIL_NODEMAILER,
     pass: config.PASSWORD_GMAIL_NODEMAILER,
   },
+  tls: {
+    rejectUnauthorized: false,  
+  },
 });
 
 export const sendTicket = (
@@ -58,7 +61,7 @@ export const sendTicket = (
             <style>
                 body {
                     font-family: Arial, sans-serif;
-                    background-color: #f4f4f4;
+                    background-color: #003153;
                     margin: 0;
                     padding: 0;
                 }
@@ -113,20 +116,20 @@ export const sendTicket = (
         <body>
             <div class="container">
                 <div class="header">
-                    <h1>Detalles de la Compra</h1>
+                    <h1>Detalles</h1>
                 </div>
                 <div class="content">
                     <p><strong>Código:</strong> ${ticketCode}</p>
                     <p><strong>Importe:</strong> $${amount}</p>
                     <p><strong>Comprador:</strong> ${purchaser}</p>
-                    <p><strong>Fecha de la Compra:</strong> ${purchaseDatetime}</p>
+                      <p><strong>Fecha:</strong> ${purchaseDatetime}</p>
                     <div class="products">
-                        <h2>Productos Comprados:</h2>
+                        <h2>Productos adquiridos:</h2>
                         ${productsTable}
                     </div>
                 </div>
                 <div class="footer">
-                    <p>2024 Victor Molina. Todos los derechos reservados.</p>
+                    <p></p>
                 </div>
             </div>
         </body>
@@ -135,7 +138,7 @@ export const sendTicket = (
 
   transporter
     .sendMail({
-      from: "Victor Molina <molinavitillo@gmail.com>",
+      from: "Fabrizio Landriel <fabrilandriel19@gmail.com>",
       to: to,
       subject: `Ticket #${ticketCode}`,
       html: htmlContent,
@@ -146,7 +149,7 @@ export const sendTicket = (
     })
     .catch((error) => {
       if (error.code !== 500) {
-        req.logger.error(
+        logger.error(
           JSON.stringify(
             {
               name: error.name,
@@ -159,7 +162,7 @@ export const sendTicket = (
           )
         );
       } else {
-        req.logger.fatal(
+        logger.fatal(
           JSON.stringify(
             {
               name: error.name,
@@ -179,7 +182,7 @@ export const sendResetPassword = (token, user) => {
   let URL = config.URL;
   const mailOptions = {
     to: user.email,
-    from: "Victor Molina <molinavitillo@gmail.com>",
+    from: "Fabrizio Landriel <fabrilandriel19@gmail.com>",
     subject: "Password Reset",
     text: `You are receiving this because you (or someone else) have requested the reset of the password for your account.
       Please click on the following link, or paste this into your browser to complete the process:
@@ -195,7 +198,7 @@ export const sendResetPassword = (token, user) => {
     })
     .catch((error) => {
       if (error.code !== 500) {
-        req.logger.error(
+        logger.error(
           JSON.stringify(
             {
               name: error.name,
@@ -208,7 +211,7 @@ export const sendResetPassword = (token, user) => {
           )
         );
       } else {
-        req.logger.fatal(
+        logger.fatal(
           JSON.stringify(
             {
               name: error.name,
@@ -227,10 +230,10 @@ export const sendResetPassword = (token, user) => {
 export const sendAccountDeletionNotification = async (to, userName, logger) => {
   try {
     const mailOptions = {
-      from: "Victor Molina <molinavitillo@gmail.com>",
+      from: "Fabrzio Landriel <fabrilandriel19@gmail.com>",
       to: to,
       subject: "Account Deletion Notification",
-      text: `Hello ${userName},\n\nYour account has been deleted due to inactivity.\n\nBest regards,\nVictor Molina`,
+      text: `Hello ${userName},\n\nYour account has been deleted due to inactivity.\n\nBest regards,\n Fabrizio Landriel`,
     };
 
     await transporter.sendMail(mailOptions);
@@ -282,10 +285,10 @@ export const sendProductDeletionNotification = async (
 ) => {
   try {
     const mailOptions = {
-      from: "Victor Molina <molinavitillo@gmail.com>",
+      from: "Fabrizio Landriel <fabrilandriel19@gmail.com>",
       to: to,
       subject: "Product Deletion Notification",
-      text: `Hello,\n\nWe wanted to inform you that your product "${productName}" has been deleted.\n\nBest regards,\nVictor Molina`,
+      text: `Hello,\n\nWe wanted to inform you that your product "${productName}" has been deleted.\n\nBest regards,\n Fabrizio Landriel`,
     };
 
     await transporter.sendMail(mailOptions);

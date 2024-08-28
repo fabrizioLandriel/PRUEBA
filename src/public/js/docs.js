@@ -16,9 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!response.ok) {
           return Toastify({
-            text: "Error uploading file",
+            text: "Error subiendo un archivo",
             style: {
-              background: "linear-gradient(to right, #00b09b, #96c93d)",
+              background: "linear-gradient(to right, #FFA100, #0066A1)",
             },
             duration: 3000,
           }).showToast();
@@ -27,17 +27,17 @@ document.addEventListener("DOMContentLoaded", () => {
         const result = await response.json();
 
         Toastify({
-          text: "File uploaded successfully",
+          text: "Subida de archivo satisfactoria",
           style: {
-            background: "linear-gradient(to right, #00b09b, #96c93d)",
+            background: "linear-gradient(to right, #FFA100, #0066A1)",
           },
           duration: 3000,
         }).showToast();
       } catch (error) {
         Toastify({
-          text: "Error uploading file",
+          text: "Error subiendo un archivo",
           style: {
-            background: "linear-gradient(to right, #00b09b, #96c93d)",
+            background: "linear-gradient(to right, #FFA100, #0066A1)",
           },
           duration: 3000,
         }).showToast();

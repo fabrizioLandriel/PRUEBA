@@ -16,13 +16,13 @@ export class SessionsController {
       if (web == "web") {
         res.redirect("/");
       } else {
-        return res.json({ payload: "Successfull login" });
+        return res.json({ payload: "Logueado" });
       }
     } catch (error) {
       CustomError.createError(
         "Error",
         error.message,
-        `Internal server Error, ${error.message}`,
+        `Error del server, ${error.message}`,
         ERROR_TYPES.INTERNAL_SERVER_ERROR
       );
       next(error);
@@ -61,14 +61,14 @@ export class SessionsController {
           CustomError.createError(
             "Error",
             error.message,
-            `Internal server Error, ${error.message}`,
+            `Error del server, ${error.message}`,
             ERROR_TYPES.INTERNAL_SERVER_ERROR
           );
         }
         if (web === "web") {
           return res.redirect("/");
         } else {
-          return res.json({ payload: "Successful logout" });
+          return res.json({ payload: "Deslogueado" });
         }
       });
     } catch (error) {
@@ -84,13 +84,13 @@ export class SessionsController {
       } else {
         return res
           .status(201)
-          .json({ payload: "Successful registration", newUser: req.user });
+          .json({ payload: "Registro satisfactorio", newUser: req.user });
       }
     } catch (error) {
       CustomError.createError(
         "Error",
         error.message,
-        `Autentication server Error`,
+        `Error en la autenticacion del server`,
         ERROR_TYPES.INTERNAL_SERVER_ERROR
       );
       next(error);
@@ -105,7 +105,7 @@ export class SessionsController {
       CustomError.createError(
         "Error",
         error.message,
-        `Autentication server Error`,
+        `Error en la autenticacion del server`,
         ERROR_TYPES.INTERNAL_SERVER_ERROR
       );
       next(error);
@@ -121,7 +121,7 @@ export class SessionsController {
       CustomError.createError(
         "Error",
         error.message,
-        `Autentication server Error`,
+        `Error en la autenticacion del server`,
         ERROR_TYPES.INTERNAL_SERVER_ERROR
       );
       next(error);

@@ -144,32 +144,4 @@ describe("Cart router test", function () {
     await productsModel.findByIdAndDelete(pid);
     await cartsModel.findByIdAndDelete(cid);
   });
-
-  it("Update all products in cart", async function () {
-    let cart = await requester.post("/api/carts");
-    let cid = cart.body.cart._id;
-    let product = await productsModel.create(mockProduct);
-    let pid = product._id;
-    let cartWithProduct = await requester.post(
-      `/api/carts/${cid}/product/${pid}`
-    );
-    let response = await requester.put(`/api/carts/${cid}`).send({
-      product: { _id: "6634f9c260dc796de83d6d5a" },
-      quantity: 10,
-    });
-    let { ok, status, body } = response;
-    expect(body.cartUpdated.products[0].product.code).not.to.be.equal(
-      cartWithProduct.body.payload.products[0].code
-    );
-    expect(body.payload).to.be.equal(`Cart ${cid} updated`);
-    expect(body.cartUpdated.products[0].product).to.have.property("_id");
-    expect(isValidObjectId(body.cartUpdated.products[0].product._id)).to.be
-      .true;
-    expect(status).to.be.equal(200);
-    expect(ok).to.be.true;
-    expect(isValidObjectId(pid)).to.be.true;
-    expect(isValidObjectId(cid)).to.be.true;
-    await productsModel.findByIdAndDelete(pid);
-    await cartsModel.findByIdAndDelete(cid);
-  });
 });

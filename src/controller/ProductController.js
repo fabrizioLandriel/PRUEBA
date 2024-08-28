@@ -22,7 +22,7 @@ export class ProductController {
         return CustomError.createError(
           "Error",
           null,
-          "Internal server Error",
+          "Error del server",
           ERROR_TYPES.INTERNAL_SERVER_ERROR
         );
       }
@@ -65,7 +65,7 @@ export class ProductController {
         return CustomError.createError(
           "ERROR",
           null,
-          "Enter a valid Mongo ID",
+          "Ingrese un ID valido de Mongo",
           ERROR_TYPES.INVALID_ARGUMENTS
         );
       }
@@ -76,7 +76,7 @@ export class ProductController {
         return CustomError.createError(
           "Not found",
           null,
-          "Product not found",
+          "Producto no encontrado",
           ERROR_TYPES.NOT_FOUND
         );
       }
@@ -128,7 +128,7 @@ export class ProductController {
         return CustomError.createError(
           "Unfilled fields",
           null,
-          "Check unfilled fields",
+          "Campos incompletos",
           ERROR_TYPES.INVALID_ARGUMENTS
         );
 
@@ -139,7 +139,7 @@ export class ProductController {
         return CustomError.createError(
           "Error",
           null,
-          "Internal server Error",
+          "Error del server",
           ERROR_TYPES.INTERNAL_SERVER_ERROR
         );
       }
@@ -148,7 +148,7 @@ export class ProductController {
         return CustomError.createError(
           "Error",
           null,
-          `Code ${code} already exist`,
+          `El codigo ${code} ya existe`,
           ERROR_TYPES.INVALID_ARGUMENTS
         );
       }
@@ -165,7 +165,7 @@ export class ProductController {
         return CustomError.createError(
           "Error",
           null,
-          "Internal server Error",
+          "Error del server",
           ERROR_TYPES.INTERNAL_SERVER_ERROR
         );
       }
@@ -208,7 +208,7 @@ export class ProductController {
         return CustomError.createError(
           "ERROR",
           null,
-          "Enter a valid Mongo ID",
+          "Ingrese un ID valido de Mongo",
           ERROR_TYPES.INVALID_ARGUMENTS
         );
       }
@@ -226,7 +226,7 @@ export class ProductController {
             return CustomError.createError(
               "Error",
               null,
-              `Code ${code} already exist`,
+              `El codigo ${code} ya existe`,
               ERROR_TYPES.INVALID_ARGUMENTS
             );
           }
@@ -234,7 +234,7 @@ export class ProductController {
           return CustomError.createError(
             "ERROR",
             null,
-            "Internal server Error",
+            "Error del server",
             ERROR_TYPES.INTERNAL_SERVER_ERROR
           );
         }
@@ -247,7 +247,7 @@ export class ProductController {
         return CustomError.createError(
           "ERROR",
           null,
-          `Error updating product, ${error.message} `,
+          `Error actualizando producto, ${error.message} `,
           ERROR_TYPES.INVALID_ARGUMENTS
         );
       }
@@ -290,7 +290,7 @@ export class ProductController {
         return CustomError.createError(
           "ERROR",
           null,
-          "Enter a valid Mongo ID",
+          "Ingrese un ID valido de Mongo",
           ERROR_TYPES.INVALID_ARGUMENTS
         );
       }
@@ -319,7 +319,7 @@ export class ProductController {
             return CustomError.createError(
               "ERROR",
               null,
-              "Product not found",
+              "Producto no encontrado",
               ERROR_TYPES.NOT_FOUND
             );
           }
@@ -327,14 +327,14 @@ export class ProductController {
           return CustomError.createError(
             "ERROR",
             null,
-            `Error deleting product`,
+            `Error eliminando producto`,
             ERROR_TYPES.INVALID_ARGUMENTS
           );
         }
       } else {
         return res
           .status(403)
-          .json({ error: `Insufficient privileges to delete` });
+          .json({ error: `Privilegios insuficientes para eliminar` });
       }
     } catch (error) {
       if (error.code !== 500) {

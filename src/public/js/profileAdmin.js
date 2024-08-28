@@ -16,9 +16,9 @@ function handleEvent(event) {
     .then((response) => {
       if (response.ok) {
         Toastify({
-          text: "Role updated successfully!",
+          text: "Rol actualizado correctamente",
           style: {
-            color: "linear-gradient(to right, #00b09b, #96c93d)",
+            color: "linear-gradient(to right, #FFA100, #0066A1)",
           },
           duration: 3000,
         }).showToast();
@@ -26,14 +26,14 @@ function handleEvent(event) {
           window.location.reload();
         }, 2000);
       } else {
-        throw new Error("Failed to update role");
+        throw new Error("Fallo en actualizar rol");
       }
     })
     .catch((error) => {
       Toastify({
         text: error.message,
         style: {
-          background: "linear-gradient(to right, #ff5f6d, #ffc371)",
+          background: "linear-gradient(to right, #FFA100, #0066A1)",
         },
         duration: 3000,
       }).showToast();
@@ -56,9 +56,9 @@ function handleDelete(event) {
     .then((response) => {
       if (response.ok) {
         Toastify({
-          text: "User deleted successfully!",
+          text: "Usuario eliminado correctamente",
           style: {
-            background: "linear-gradient(to right, #00b09b, #96c93d)",
+            background: "linear-gradient(to right, #FFA100, #0066A1)",
           },
           duration: 3000,
         }).showToast();
@@ -67,7 +67,7 @@ function handleDelete(event) {
         }, 2000);
       } else {
         return response.json().then((data) => {
-          throw new Error(data.message || "An error occurred");
+          throw new Error(data.message || "Ocurrio un error");
         });
       }
     })
@@ -75,7 +75,7 @@ function handleDelete(event) {
       Toastify({
         text: `Error: ${error.message}`,
         style: {
-          background: "linear-gradient(to right, #ff5f6d, #ffc371)",
+          background: "linear-gradient(to right, #FFA100, #0066A1)",
         },
         duration: 3000,
       }).showToast();

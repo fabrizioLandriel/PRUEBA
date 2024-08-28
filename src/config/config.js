@@ -21,27 +21,3 @@ export const config = {
   URL: process.env.URL,
 };
 
-//
-// _id
-// 6634f9c260dc796de83d6d58
-// title
-// "Razer BlackWidow V3 Pro"
-// description
-// "Teclado mecánico inalámbrico con retroiluminación RGB."
-// code
-// "tec1"
-// price
-// 250
-// status
-// true
-// stock
-// 86
-// category
-// "teclados"
-
-// thumbnails
-// Array (2)
-// __v
-// 0
-// owner
-// "molinavitillo@gmail.com"

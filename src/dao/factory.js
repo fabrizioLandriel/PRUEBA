@@ -32,6 +32,6 @@ switch (config.PERSISTENCE.toUpperCase()) {
     break;
 
   default:
-    throw new Error("Misconfigured persistence");
+    throw new Error("Configuracion inadecuada");
     break;
 }

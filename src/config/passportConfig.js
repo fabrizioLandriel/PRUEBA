@@ -19,12 +19,12 @@ export const initPassport = () => {
         try {
           let { first_name, last_name, age } = req.body;
           if (!first_name || !last_name || !age) {
-            return done(null, false, { message: "Unfilled fields" });
+            return done(null, false, { message: "Campos incompletos" });
           }
           let exist = await userService.getUserBy({ email: username });
           if (exist) {
             return done(null, false, {
-              message: `${username} is already registered `,
+              message: `${username} ya esta registrado`,
             });
           }
           let newCart = await cartService.createCart();
@@ -52,10 +52,10 @@ export const initPassport = () => {
         try {
           let user = await userService.getUserBy({ email: username });
           if (!user) {
-            return done(null, false, { message: "User not found" });
+            return done(null, false, { message: "Usuario no encontrado" });
           }
           if (!validatePassword(password, user)) {
-            return done(null, false, { message: "Invalid password" });
+            return done(null, false, { message: "Contraseña incompleta" });
           }
           return done(null, user);
         } catch (error) {
@@ -71,14 +71,14 @@ export const initPassport = () => {
       {
         clientID: config.CLIENT_ID_GITHUB,
         clientSecret: config.CLIENT_SECRET_GITHUB,
-        callbackURL: "http://localhost:8081/api/sessions/githubCallback",
+        callbackURL: "http://localhost:8081/api/sessions/githubCb",
       },
       async (tokenAcceso, tokenRefresh, profile, done) => {
         try {
           let email = profile._json.email;
           let name = profile._json.name;
           if (!name || !email) {
-            return done(null, false, { message: "Email or name is missing" });
+            return done(null, false, { message: "Mail o nombre no encontrado" });
           }
           let user = await userService.getUserBy({ email });
           if (!user) {

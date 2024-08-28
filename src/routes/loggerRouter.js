@@ -10,5 +10,5 @@ router.get("/", (req, res) => {
   logger.http("HTTP log message");
   logger.debug("Debug log message");
 
-  return res.json({ message: "Logs generated successfully" });
+  return res.json({ message: "Logs generados" });
 });

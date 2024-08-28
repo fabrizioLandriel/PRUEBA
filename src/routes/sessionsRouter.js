@@ -8,10 +8,9 @@ export const router = Router();
 router.post("/register", passportCall("register"), SessionsController.register);
 router.post("/login", passportCall("login"), SessionsController.login);
 router.get("/github", passport.authenticate("github", {}), (req, res) => {});
-router.get(
-  "/githubCallback",
-  passportCall("github"),
-  SessionsController.githubCallback
-);
+router.get("/githubCb", passportCall("github"), (req, res) => {
+  req.session.user = req.user;
+  return res.redirect("/products");
+});
 router.get("/current", SessionsController.current);
 router.post("/logout", SessionsController.logout);

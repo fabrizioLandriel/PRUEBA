@@ -21,7 +21,7 @@ export const sendPasswordResetEmail = async (req, res, next) => {
       return CustomError.createError(
         "ERROR",
         null,
-        "No user with that email",
+        "Sin usuarios con ese mail",
         ERROR_TYPES.INVALID_ARGUMENTS
       );
     }
@@ -33,13 +33,13 @@ export const sendPasswordResetEmail = async (req, res, next) => {
     sendResetPassword(token, user);
     res.status(200).json({
       status: "success",
-      payload: `An email has been sent to ${user.email} with furter instructions.`,
+      payload: `Un mail se envio a  ${user.email} con instrucciones.`,
     });
   } catch (error) {
     CustomError.createError(
       "ERROR",
       null,
-      "Error sending email",
+      "Error al enviar el mail",
       ERROR_TYPES.INTERNAL_SERVER_ERROR
     );
     if (error.code !== 500) {
@@ -96,7 +96,7 @@ export const updatePassword = async (req, res, next) => {
       return CustomError.createError(
         "ERROR",
         null,
-        "User not found",
+        "Usuario no encontrado",
         ERROR_TYPES.NOT_FOUND
       );
     }
@@ -104,7 +104,7 @@ export const updatePassword = async (req, res, next) => {
       return CustomError.createError(
         "ERROR",
         null,
-        "Password fields cannot be empty",
+        "El campo de contraseña no puede estar vacio",
         ERROR_TYPES.INVALID_ARGUMENTS
       );
     }
@@ -114,7 +114,7 @@ export const updatePassword = async (req, res, next) => {
       return CustomError.createError(
         "ERROR",
         null,
-        "New password cannot be the same as the old password",
+        "La nueva contraseña no puede ser igual a la anterior",
         ERROR_TYPES.INVALID_ARGUMENTS
       );
     }
@@ -125,7 +125,7 @@ export const updatePassword = async (req, res, next) => {
     await user.save();
     return res
       .status(200)
-      .json({ status: "success", payload: "Password has been reset" });
+      .json({ status: "success", payload: "Contraseña cambiada" });
   } catch (error) {
     if (error.code !== 500) {
       req.logger.error(

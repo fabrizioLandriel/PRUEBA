@@ -9,12 +9,12 @@ export class Singleton {
 
   static connect(url, db) {
     if (this.#connection) {
-      logger.info("The connection has already been established");
+      logger.info("La conexion ya fue establecida");
       return this.#connection;
     }
 
     this.#connection = new Singleton(url, db);
-    logger.info("DB connected");
+    logger.info("Db conectada");
     return this.#connection;
   }
 }

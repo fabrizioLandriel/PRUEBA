@@ -3,15 +3,15 @@
   <div class="profile-container col-md-6 offset-md-3">
     <h2 class="profile-title text-center">Profile</h2>
     <div class="profile-info mb-3">
-      <label for="first_name">First Name:</label>
+      <label for="first_name">Primer nombre</label>
       <p>{{user.first_name}}</p>
     </div>
     <div class="profile-info mb-3">
-      <label for="last_name">Last Name:</label>
+      <label for="last_name">Apellido</label>
       <p>{{user.last_name}}</p>
     </div>
     <div class="profile-info mb-3">
-      <label for="email">Email:</label>
+      <label for="email">Mail:</label>
       <p>{{user.email}}</p>
     </div>
     <div class="profile-info mb-3">
@@ -21,28 +21,28 @@
     <div class="profile-action text-center mb-3">
       <form action="/api/sessions/logout" method="post">
         <input type="text" name="web" value="web" hidden />
-        <button type="submit" class="btn btn-danger">Logout</button>
+        <button type="submit" class="btn btn-primary">Logueo</button>
       </form>
     </div>
     <div class="profile-action text-center mb-3">
-      <a href="/request-password-reset" class="btn btn-warning">Change Password</a>
+      <a href="/request-password-reset" class="btn btn-primary">Cambiar contraseña</a>
     </div>
     <div class="profile-action text-center mb-3">
-      <a href="/documents/{{userId}}" class="btn btn-primary">Upload Documents</a>
+      <a href="/documents/{{userId}}" class="btn btn-primary">Subir documentos</a>
     </div>
   </div>
 
  {{#if isAdmin}}
-    <h3>User Management</h3>
+    <h3>Manejo de usuarios</h3>
     <table class="table">
       <thead>
         <tr>
           <th>ID</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Role</th>
-          <th>Change Role</th>
-          <th>Actions</th>
+          <th>Nombre</th>
+          <th>Mail</th>
+          <th>Rol</th>
+          <th>Cambiar rol</th>
+          <th>Accion</th>
         </tr>
       </thead>
       <tbody>
@@ -56,7 +56,7 @@
             <form action="api/users/admin/{{_id}}/role" method="POST" id="roleForm">
               <input id="userID" type="text" name="userId" value={{_id}} hidden>
               <select id="roleSelect" name="role">
-                <option value="user">User</option>
+                <option value="user">Usuario</option>
                 <option value="admin">Admin</option>
                 <option value="premium">Premium</option>
               </select>
@@ -69,7 +69,7 @@
             <form action="api/users/admin/{{_id}}/delete" method="POST" id="deleteForm">
               <input id="userID" type="text" name="userId" value={{_id}} hidden>
                 <button type="submit" class="btn btn-danger" onclick="handleDelete(event)">
-                  Delete
+                  Borrar
                 </button>
               </form>
           </td>

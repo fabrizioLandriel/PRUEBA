@@ -13,7 +13,7 @@ export class ProductManager {
     status = true,
     stock,
     category,
-    thumbnails = [], // tambien pasar en el body de la request como array
+    thumbnails = [], 
   }) {
     if (!title || !description || !code || !price || !stock || !category)
       return "Check unfilled fields";
@@ -80,7 +80,7 @@ export class ProductManager {
     const codeValidation = productList.some((product) => product.code == code);
     productList.push(productAdded);
     if (codeValidation) {
-      return `Code ${code} is already registered`;
+      return `Codigo ${code} ya esta registrado`;
     }
     await this.saveData(productList);
   }
@@ -116,12 +116,11 @@ export class ProductManager {
     if (search) {
       return search;
     } else {
-      return "Product not found";
+      return "Producto no encontrado";
     }
   }
 
   async updateProducts(id, productData) {
-    // ---> 'PRODUCTDATA' se pasa por el body de postman<---
     let productList = await this.getProducts();
     let findProduct = productList.find((p) => p.id === id);
     let i = productList.indexOf(findProduct);
@@ -143,7 +142,7 @@ export class ProductManager {
       productList.splice(i, 1);
     }
     if (!findProduct) {
-      return "Product not found";
+      return "Producto no encontrado";
     }
     let newId = 1;
     productList.forEach((p) => {

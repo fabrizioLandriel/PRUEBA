@@ -15,7 +15,7 @@ export class CartController {
         return CustomError.createError(
           "ERROR",
           null,
-          "Carts not found",
+          "Carritos no encontrados",
           ERROR_TYPES.NOT_FOUND
         );
       }
@@ -63,7 +63,7 @@ export class CartController {
         return CustomError.createError(
           "Error",
           null,
-          "Internal server Error",
+          "Error del server",
           ERROR_TYPES.INTERNAL_SERVER_ERROR
         );
       }
@@ -106,7 +106,7 @@ export class CartController {
         CustomError.createError(
           "ERROR",
           null,
-          "Enter a valid Mongo ID",
+          "Ingrese un ID valido",
           ERROR_TYPES.INVALID_ARGUMENTS
         );
       }
@@ -117,7 +117,7 @@ export class CartController {
           return CustomError.createError(
             "ERROR",
             null,
-            "Cart not found",
+            "Carrito no encontrado",
             ERROR_TYPES.NOT_FOUND
           );
         } else {
@@ -127,7 +127,7 @@ export class CartController {
         return CustomError.createError(
           "ERROR",
           null,
-          "Internal server error",
+          "Error del server",
           ERROR_TYPES.INTERNAL_SERVER_ERROR
         );
       }
@@ -171,7 +171,7 @@ export class CartController {
         return CustomError.createError(
           "ERROR",
           null,
-          "Enter a valid Mongo ID",
+          "Ingrese un ID valido",
           ERROR_TYPES.INVALID_ARGUMENTS
         );
       }
@@ -180,7 +180,7 @@ export class CartController {
         return CustomError.createError(
           "Unfilled fields",
           null,
-          "Check unfilled fields",
+          "Campos incompletos",
           ERROR_TYPES.INVALID_ARGUMENTS
         );
       }
@@ -189,7 +189,7 @@ export class CartController {
         return CustomError.createError(
           "ERROR",
           null,
-          "Product not found",
+          "Producto no encontrado",
           ERROR_TYPES.NOT_FOUND
         );
       }
@@ -200,7 +200,7 @@ export class CartController {
           return CustomError.createError(
             "Premium User Restriction",
             null,
-            "Premium users cannot add their own products to the cart",
+            "Usuarios premium no pueden hacer esto",
             ERROR_TYPES.UNAUTHORIZED
           );
         }
@@ -214,7 +214,7 @@ export class CartController {
         return CustomError.createError(
           "ERROR",
           null,
-          "Internal server error",
+          "Error interno del server",
           ERROR_TYPES.INTERNAL_SERVER_ERROR
         );
       }
@@ -257,7 +257,7 @@ export class CartController {
         return CustomError.createError(
           "ERROR",
           null,
-          "Enter a valid Mongo ID",
+          "Ingrese un ID valido de Mongo",
           ERROR_TYPES.INVALID_ARGUMENTS
         );
       }
@@ -266,7 +266,7 @@ export class CartController {
         return CustomError.createError(
           "Unfilled fields",
           null,
-          "Check unfilled fields",
+          "Campos incompletos",
           ERROR_TYPES.INVALID_ARGUMENTS
         );
       }
@@ -277,7 +277,7 @@ export class CartController {
           return CustomError.createError(
             "ERROR",
             null,
-            "No products in the cart",
+            "Sin productos en el carrito",
             ERROR_TYPES.NOT_FOUND
           );
         }
@@ -289,7 +289,7 @@ export class CartController {
             return CustomError.createError(
               "ERROR",
               null,
-              "Product not found",
+              "Producto no encontrado",
               ERROR_TYPES.NOT_FOUND
             );
           }
@@ -301,7 +301,7 @@ export class CartController {
         return CustomError.createError(
           "Error",
           null,
-          `Internal server Error, ${error.message}`,
+          `Error del server, ${error.message}`,
           ERROR_TYPES.INTERNAL_SERVER_ERROR
         );
       }
@@ -345,7 +345,7 @@ export class CartController {
         return CustomError.createError(
           "ERROR",
           null,
-          "Enter a valid Mongo ID",
+          "Ingrese un ID valido de Mongo",
           ERROR_TYPES.INVALID_ARGUMENTS
         );
       }
@@ -354,7 +354,7 @@ export class CartController {
         return CustomError.createError(
           "Unfilled fields",
           null,
-          "Check unfilled fields",
+          "Campos incompletos",
           ERROR_TYPES.INVALID_ARGUMENTS
         );
       }
@@ -365,7 +365,7 @@ export class CartController {
           return CustomError.createError(
             "ERROR",
             null,
-            "No products in the cart",
+            "Sin productos en el carrito",
             ERROR_TYPES.NOT_FOUND
           );
         }
@@ -377,7 +377,7 @@ export class CartController {
             return CustomError.createError(
               "ERROR",
               null,
-              "Product not found",
+              "Producto no encontrado",
               ERROR_TYPES.NOT_FOUND
             );
           }
@@ -389,7 +389,7 @@ export class CartController {
         return CustomError.createError(
           "Error",
           null,
-          `Internal server Error, ${error.message}`,
+          `Error del server, ${error.message}`,
           ERROR_TYPES.INTERNAL_SERVER_ERROR
         );
       }
@@ -432,7 +432,7 @@ export class CartController {
         return CustomError.createError(
           "ERROR",
           null,
-          "Enter a valid Mongo ID",
+          "Ingrese un ID valido de Mongo",
           ERROR_TYPES.INVALID_ARGUMENTS
         );
       }
@@ -441,7 +441,7 @@ export class CartController {
         return CustomError.createError(
           "Unfilled fields",
           null,
-          "Check unfilled fields",
+          "Campos incompletos",
           ERROR_TYPES.INVALID_ARGUMENTS
         );
       }
@@ -453,7 +453,7 @@ export class CartController {
         return CustomError.createError(
           "Error",
           null,
-          "Internal server Error",
+          "Error del server",
           ERROR_TYPES.INTERNAL_SERVER_ERROR
         );
       }
@@ -497,7 +497,7 @@ export class CartController {
         return CustomError.createError(
           "ERROR",
           null,
-          "Enter a valid Mongo ID",
+          "Ingrese un ID valido de Mongo",
           ERROR_TYPES.INVALID_ARGUMENTS
         );
       }
@@ -506,7 +506,7 @@ export class CartController {
         return CustomError.createError(
           "Unfilled fields",
           null,
-          "Invalid cart",
+          "Carrito invalido",
           ERROR_TYPES.INVALID_ARGUMENTS
         );
       }
@@ -515,7 +515,7 @@ export class CartController {
         return CustomError.createError(
           "ERROR",
           null,
-          "Invalid cart",
+          "Carrito invalido",
           ERROR_TYPES.INVALID_ARGUMENTS
         );
       }
@@ -528,7 +528,7 @@ export class CartController {
         return CustomError.createError(
           "Error",
           null,
-          "Internal server Error",
+          "Error del server",
           ERROR_TYPES.INTERNAL_SERVER_ERROR
         );
       }
@@ -556,7 +556,7 @@ export class CartController {
         return CustomError.createError(
           "ERROR",
           null,
-          "Enter a valid Mongo ID",
+          "Ingrese un ID valido de Mongo" ,
           ERROR_TYPES.INVALID_ARGUMENTS
         );
       }
@@ -568,7 +568,7 @@ export class CartController {
         return CustomError.createError(
           "Error",
           null,
-          "Internal server Error",
+          "Error del server",
           ERROR_TYPES.INTERNAL_SERVER_ERROR
         );
       }

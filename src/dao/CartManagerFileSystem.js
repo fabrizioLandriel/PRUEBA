@@ -16,7 +16,7 @@ export class CartManager {
     } else {
       await this.createJsonCart();
     }
-    return "Cart created successfully!";
+    return "Carrito creado correctamente!";
   }
 
   async getCart() {

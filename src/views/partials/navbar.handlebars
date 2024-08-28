@@ -1,13 +1,13 @@
 <header>
   <nav class="navbar navbar-custom">
     <div class="container-fluid">
-      <h1>Desafios Backend</h1>
+      <h1>Ecommerce</h1>
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="/products">Home</a>
+          <a class="nav-link" href="/products">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/realTimeProducts">Real Time Products</a>
+          <a class="nav-link" href="/realTimeProducts">Productos en tiempo real</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/carts/{{cart._id}}">
@@ -18,15 +18,15 @@
         </li>
       </ul>
       <div class="userContainer ml-auto">
-        <span class="navbar-text">Welcome, {{user.first_name}}!</span>
+        <span class="navbar-text"></span>
         <a class="nav-link" href="/profile">
           <i class="fa-solid fa-user"></i>
         </a>
         <form action="/api/sessions/logout" method="post" class="d-inline">
           <input type="text" name="web" value="web" hidden />
           <button type="submit" class="btn btn-primary">
-            <i class="fa-solid fa-door-open"></i>
-            Logout
+            <i class="fa-solid"></i>
+            Desloguear
           </button>
         </form>
 

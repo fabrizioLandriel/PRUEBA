@@ -8,7 +8,7 @@ export class ProductManagerMongoDAO {
     status = true,
     stock,
     category,
-    thumbnails = [], // tambien pasar en el body de la request como array
+    thumbnails = [],
     owner,
   }) {
     let productAdded = {

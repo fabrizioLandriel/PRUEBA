@@ -20,7 +20,7 @@
                 <p class="card-text">{{product.description}}</p>
                 <p class="card-text precio fw-bold">${{product.price}}</p>
                 <p class="card-text">stock: {{product.stock}}</p>
-                <p class="card-text">Quantity: {{quantity}}</p>
+                <p class="card-text">Cantidad: {{quantity}}</p>
               </div>
             </div>
           </div>
@@ -30,11 +30,11 @@
   </article>
   <section class="resumenPedido w-100">
     <div class="mascosas">
-      <h2 class="fw-bold">Order summary:</h2>
-      <p id="precioTotal">Total price:</p>
+      <h2 class="fw-bold">Resumen:</h2>
+      <p id="precioTotal">Precio total:</p>
     </div>
-    <button id="btnf" class="btn btn-success" onclick="purchase('{{user.cart}}')">Complete Purchase</button>
-    <a href="/products"><button class="btn btn-primary">Continue Shopping</button></a>
+    <button id="btnf" class="btn btn-success" onclick="purchase('{{user.cart}}')">Complete la compra</button>
+    <a href="/products"><button class="btn btn-primary">Continue comprando</button></a>
   </section>
 </main>
 <script src="/js/cart.js"></script>
