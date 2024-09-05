@@ -2,6 +2,7 @@ import { usersModel } from "../dao/models/userModel.js";
 import { UserDTO } from "../dto/UsersDTO.js";
 import { CustomError } from "../utils/CustomError.js";
 import { ERROR_TYPES } from "../utils/EErrors.js";
+import { userService } from "../services/usersService.js";
 import { sendAccountDeletionNotification } from "../utils/mailing.js";
 
 export class UserController {
@@ -129,11 +130,11 @@ export class UserController {
       }
 
       user.documents.push(...documents);
-      await user.save();
-      res.status(200).json({
-        message: "Documents uploaded successfully",
-        documents: user.documents,
-      });
+      await usersModel.updateOne(
+        { _id: uid },
+        { $push: { documents: { $each: documents } } }
+      );
+      user = await userService.getUserBy({ _id: uid });
     } catch (error) {
       if (error.code !== 500) {
         req.logger.error(

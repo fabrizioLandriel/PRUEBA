@@ -64,7 +64,7 @@ app.use("/", viewsRouter);
 app.use("/", passwordRouter);
 
 const server = app.listen(PORT, () =>
-  logger.info(`Server listening in port:${PORT}`)
+  logger.info(`Server escuchando en puerto ${PORT}`)
 );
 
 export const io = new Server(server);

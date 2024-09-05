@@ -112,11 +112,11 @@ const getTotalPrice = async () => {
     }, 0);
 
     const totalPriceDiv = document.getElementById("precioTotal");
-    totalPriceDiv.innerHTML = `<p id="precioTotal">Total price: $${totalPrice.toFixed(
+    totalPriceDiv.innerHTML = `<p id="precioTotal">Precio total: $${totalPrice.toFixed(
       2
     )}</p>`;
   } catch (error) {
-    console.error("Error fetching total price:", error);
+    console.error("Error trayendo el precio total:", error);
   }
 };
 
