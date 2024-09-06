@@ -11,7 +11,7 @@ router.get("/:cid", CartController.getCartById);
 
 router.post(
   "/:cid/product/:pid",
-  auth(["user", "premium"]),
+  auth(["user", "premium"]), 
   CartController.addProductToCart
 );
 
